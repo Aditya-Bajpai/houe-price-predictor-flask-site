@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>house price predictor</title>
+</head>
+<body>
+    <h1>house price predictor</h1>
+    
+
+    <form action="{{url_for('predict')}}" method="POST">
+        <!--bedrooms	bathrooms	sqft_living	sqft_lot	floors	waterfront	view	condition	sqft_above	sqft_basement-->
+        <input type="text" name='bedrooms' placeholder="bedrooms" required = "required">
+        <input type="text" name='bathrooms' placeholder="bathrooms" required = "required">
+        <input type="text" name='square feet living' placeholder="square feet living" required = "required">
+        <input type="text" name='square feet lot' placeholder="square feet lot" required = "required">
+        <input type="text" name='floors' placeholder="floors" required = "required">
+        <input type="text" name='waterfront' placeholder="waterfront" required = "required">
+        <input type="text" name='view' placeholder="view" required = "required">
+        <input type="text" name='condition' placeholder="condition" required = "required">
+        <input type="text" name='sqft_above' placeholder="sqft_above" required = "required">
+        <input type="text" name='sqft_basement' placeholder="sqft_basement" required = "required">
+
+        <button type="submit">Predict</button>
+    </form>
+    <br>
+    <br>
+    {{prediction_text}}
+</body>
+</html>
