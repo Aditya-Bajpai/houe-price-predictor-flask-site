@@ -17,7 +17,10 @@ def predict():
     final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
     output = round(prediction[0], 2)
-    return render_template('main.html', prediction_text='Predicted house price is : {}'.format(output))
+    if output > 100000:
+        return render_template('main.html', prediction_text='Predicted house price is : {}'.format(output), rich = "damn boi thats an expensive house")
+    else:
+        return render_template('main.html', prediction_text='Predicted house price is : {}'.format(output))
 
 if __name__ == "__main__":
     app.run(debug=True)
